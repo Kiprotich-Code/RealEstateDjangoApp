@@ -1,0 +1,36 @@
+{% extends './dashboard.html' %}
+
+{% block content %}
+<div class="container p-5">
+    <div class="col-md-6 m-auto">
+        <table class="table table-bordered table-primary">
+            <tr>
+                <td></td>
+                <td>Title</td>
+                <td>Location</td>
+                <td>Price</td>
+                <td>Address</td>
+                <td>Status</td>
+                <td>#</td>
+                <td>#</td>
+            </tr>
+            {% for property in properties %}
+            <tr>
+                <td>#</td>
+                <td>{{property.title}}</td>
+                <td>{{property.location}}</td>
+                <td>{{property.price}}</td>
+                <td>{{property.address}}</td>
+                <td>{{property.status}}</td>
+                <td>
+                    <a href="{% url 'update_property' property.id %}" class="btn btn-sm btn-outline-primary">Update</a>
+                </td>
+                <td>
+                    <a href="{% url 'property_details' property.id %}" class="btn btn-sm btn-outline-warning">Details</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
