@@ -12,7 +12,7 @@ class Properties(models.Model):
     amentities = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=50)
     year_built = models.IntegerField()
-    images = models.ImageField(upload_to='/images/props')
+    images = models.ImageField(upload_to='images/properties')
     location = models.CharField(max_length=100)
     features = models.TextField(blank=True)
 
