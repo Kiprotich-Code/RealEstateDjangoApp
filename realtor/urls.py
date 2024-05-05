@@ -8,4 +8,5 @@ urlpatterns = [
     # cbv 
     path("property_list/", views.PropertyListView.as_view(), name="property_list"),
     path("property_details/<pk>", views.PropertyDetailView.as_view(), name="property_details"),
+    path("update_property/<pk>", views.PropertyUpdateView.as_view(), name="update_property"),
 ]

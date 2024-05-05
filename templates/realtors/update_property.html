@@ -4,6 +4,6 @@
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_table }}
-    <input type="submit" class="btn btn-lg bt-outline-primary" value="Update">
+    <button type="submit" class="btn btn-lg bt-outline-primary">Update</button>
 </form>
 {% endblock %}
