@@ -12,10 +12,8 @@ class Properties(models.Model):
     amentities = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=50)
     year_built = models.IntegerField()
-    images = models.ImageField(upload_to='images/properties')
+    images = models.ImageField(upload_to='images/properties', blank=True)
     location = models.CharField(max_length=100)
     features = models.TextField(blank=True)
 
-    def __str__(self):
-        return self.title.split()[0]
 
