@@ -1,0 +1,13 @@
+{% extends './dashboard.html' %}
+
+{% block title %}
+    <title>Admin | Create Properties</title>
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" name="submit" class="btn btn-lg btn-outline-primary" value="Create Property">
+</form>
+{% endblock %}
