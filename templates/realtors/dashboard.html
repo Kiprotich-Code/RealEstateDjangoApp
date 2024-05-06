@@ -15,8 +15,71 @@
 </head>
 
 <body>
+    {% block nav %}
+    <nav class="navbar navbar-expand-lg bg-light p-4 fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand px-md-5 text-info fw-bold" id="brand" href="#">Baraka Homes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-md-flex gap-md-5">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'orders'%}">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'callbacks'%}">Callbacks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'messages'%}">Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'analytics'%}">Analytics</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Properties
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Properties</a></li>
+                            <li><a class="dropdown-item" href="#">Add</a></li>
+                            <li><a class="dropdown-item" href="#">Update</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Signout</a>
+                    </li>
+
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
     {% block content %}
-                
+    <!-- header  -->
+    <div class="vh-100 justify-content-center">
+        <div class="row p-5">
+            <div class="col p-5 mt-5 gap-md-5">
+                {% block content_title %}
+                <h2 class="fw-lighter lh-lg">Admin, Baraka Homes!</h2>
+                {% endblock %}
+                <h1 class="text-info lh-lg">Site Currently Under Construction</h1>
+                <h5 class="fw-lighter lh-lg">While you wait for this feature to be added, please checkout features that
+                    are already up and running - You can manage properties!</h5>
+                <button class="btn btn-lg btn-outline-dark rounded">Manage Properties</button>
+            </div>
+            <div class="col mt-md-3 p-5">
+                <img src="{% static 'images/matwork.jpeg'%}" alt="" style="width: 80%;">
+            </div>
+        </div>
+    </div>
     {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
