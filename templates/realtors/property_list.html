@@ -1,11 +1,13 @@
 {% extends './dashboard.html' %}
 
 {% block content %}
-<div class="container p-5">
-    <div class="col-md-6 m-auto">
+<div class="row py-5">
+    <div class="col col-md-8 rounded  py-5 ms-3">
+        <h5 class="text-info"># Properties</h5>
         <table class="table table-bordered table-primary">
             <tr>
                 <td></td>
+                <td>Image</td>
                 <td>Title</td>
                 <td>Location</td>
                 <td>Price</td>
@@ -17,6 +19,9 @@
             {% for property in properties %}
             <tr>
                 <td>#</td>
+                <td>
+                    <img src="{{property.images.url}}" alt="">
+                </td>
                 <td>{{property.title}}</td>
                 <td>{{property.location}}</td>
                 <td>{{property.price}}</td>
@@ -26,11 +31,16 @@
                     <a href="{% url 'update_property' property.id %}" class="btn btn-sm btn-outline-primary">Update</a>
                 </td>
                 <td>
-                    <a href="{% url 'property_details' property.id %}" class="btn btn-sm btn-outline-warning">Details</a>
+                    <a href="{% url 'property_details' property.id %}"
+                        class="btn btn-sm btn-outline-warning">Details</a>
                 </td>
             </tr>
             {% endfor %}
         </table>
+    </div>
+
+    <div class=" col col-md-3">
+        <h2>This is a column</h2>
     </div>
 </div>
 {% endblock %}

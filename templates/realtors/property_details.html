@@ -1,20 +1,73 @@
 {% extends './dashboard.html' %}
 
 {% block content %}
-<div class="container">
-    <div class="small fw-lighter">
-        <p>{{property.title}}</p>
-        <p>{{property.description}}</p>
-        <p>{{property.address}}</p>
-        <p>{{property.price}}</p>
-        <p>{{property.size}}</p>
-        <p>{{property.bedrooms}}</p>
-        <p>{{property.bathrooms}}</p>
-        <p>{{property.status}}</p>
-        <p>{{property.year_built}}</p>
-        <p>{{property.images}}</p>
-        <p>{{property.location}}</p>
-        <p>{{property.features}}</p>
+<div class="container p-5 lh-sm">
+    <div class="py-5">
+        <img src="{{property.images.url}}" alt="" style="width: 80%;">
+        <div class="">
+            <h3 class="py-2">Kshs. {{property.price}}</h3>
+            <h5 class="card-title fw-bold text-info mb-3">{{property.title}}</h5>
+            <p class="fw-lighter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                </svg>
+                {{property.address}}
+            </p>
+            <span class="d-flex gap-3 flex-wrap">
+                <p class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-house" viewBox="0 0 16 16">
+                        <path
+                            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                    </svg>
+                    {{property.size}}
+                </p>
+                <p class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-building-fill-check" viewBox="0 0 16 16">
+                        <path
+                            d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514" />
+                        <path
+                            d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                    </svg>
+                    {{property.status}}
+                </p>
+            </span>
+        </div>
     </div>
+    <div class="row">
+        <div class="col col-md-8 py-2">
+            <h5>Description</h5>
+            <p class="lh-lg fw-light">
+                {{property.description}}
+            </p>
+        </div>
+        <div class="col-12 col-md-4 p-2">
+            <div class="col">
+                <h5 class="text-info">Amentities</h5>
+                <ul>
+                  <li>{{property.amentities}}</li>
+                </ul>
+            </div>
+
+            <div class="col py-2">
+                <h5 class="text-info">Features</h5>
+                <ul>
+                    <li> {{property.features}}</li>
+                </ul>
+            </div>
+
+            <!-- <div class="">
+                <h5 class="text-info">I want this!</h5>
+                <form action="">
+                    <input type="text" name="" id="" class="form-control mb-3" placeholder="Enter Email Address">
+                    <input type="text" name="" id="" class="form-control mb-3" placeholder="Enter Phone No">
+                    <button class="btn btn-outline-dark">Call Me Back</button>
+                </form>
+            </div> -->
+        </div>
+    </div>
+    
 </div>
 {% endblock %}

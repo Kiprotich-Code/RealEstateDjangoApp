@@ -10,11 +10,11 @@ def realtor(request):
 
 def create_property(request):
     if request.method == 'POST':
-        form = PropertiesForm(request.POST)
+        form = PropertiesForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('realtor')
-        
+            return redirect('property_list')
+
     else:
         form = PropertiesForm()
 
@@ -39,5 +39,5 @@ class PropertyDetailView(DetailView):
 class PropertyUpdateView(UpdateView):
     template_name = 'realtors/update_property.html'
     model = Properties
-    fields = ('title', 'description', 'location', 'images', 'features')
+    fields = ('title', 'description', 'images', 'features')
     success_url = '../property_list'

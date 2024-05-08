@@ -11,9 +11,9 @@ class Properties(models.Model):
     bathrooms = models.IntegerField(blank=True)
     amentities = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=50)
-    year_built = models.IntegerField()
+    # year_built = models.IntegerField(blank=True)
     images = models.ImageField(upload_to='images/properties', blank=True)
-    location = models.CharField(max_length=100)
+    # location = models.CharField(max_length=100, blank=True)
     features = models.TextField(blank=True)
 
 

@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,9 +49,9 @@
                             Properties
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Properties</a></li>
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">Update</a></li>
+                            <li><a class="dropdown-item" href="{% url 'property_list'%}">Properties</a></li>
+                            <li><a class="dropdown-item" href="{% url 'create_property'%}">Add</a></li>
+                            <li><a class="dropdown-item" href="{% url 'property_list'%}">Update</a></li>
                         </ul>
                     </li>
 

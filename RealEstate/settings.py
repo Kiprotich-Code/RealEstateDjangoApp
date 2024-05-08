@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     # INSTALLED_APPS 
     'main',
     'realtor',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -120,4 +122,8 @@ STATICFILES_DIRS = [
 ]
 
 # Media 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
