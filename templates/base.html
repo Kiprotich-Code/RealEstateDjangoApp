@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  {% block content %}
   <div class="header">
     <!-- nav  -->
     <nav class="navbar navbar-expand-lg bg-light p-3 fixed-top">
@@ -34,7 +35,7 @@
               <a class="nav-link" href="#explore">Explore</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./properties.html">Properties</a>
+              <a class="nav-link" href="{% url 'props'%}">Properties</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact Us</a>
@@ -500,7 +501,7 @@
             <p class="description">We had the pleasure of working with Baraka Homes in our search for the perfect
               property in Nairobi, and we couldn't be more impressed with their professionalism and expertise. </p>
           </div>
-          <div class="author"><img class="rounded-circle" src="{% static 'images/img.jpg">
+          <div class="author"><img class="rounded-circle" src="{% static 'images/img.jpg' %}">
             <h5 class="name">Ben Njunguna</h5>
             <p class="title">CEO of Company Inc.</p>
           </div>
@@ -510,7 +511,7 @@
             <p class="description">Thanks to Baraka Homes, we found the perfect home for our family, and we couldn't be
               happier with the outcome.</p>
           </div>
-          <div class="author"><img class="rounded-circle" src="{% static 'images/img.jpg">
+          <div class="author"><img class="rounded-circle" src="{% static 'images/img.jpg' %}">
             <h5 class="name">Martin Ole Sapit</h5>
             <p class="title">Manager of Barclays Bank.</p>
           </div>
@@ -521,7 +522,7 @@
               to understand our preferences and priorities, ensuring that we found a home that met all our criteria.
             </p>
           </div>
-          <div class="author"><img class="rounded-circle" src="{% static 'images/img.jpg">
+          <div class="author"><img class="rounded-circle" src="{% static 'images/img.jpg' %}">
             <h5 class="name">Emily Mwongeli</h5>
             <p class="title">Owner of Creative Ltd.</p>
           </div>
@@ -620,6 +621,8 @@
         </div>
       </div>
   </footer>
+
+  {% endblock %}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
