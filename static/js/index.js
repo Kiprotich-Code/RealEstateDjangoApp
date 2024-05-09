@@ -42,3 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
 function inProgress() {
     alert('Men at work! Feature build in progress!')
 }
+
+// charts 
+new Chartist.Line('#traffic-chart', {
+  labels: ['January', 'Februrary', 'March', 'April', 'May', 'June'],
+  series: [
+      [23000, 25000, 19000, 34000, 56000, 64000]
+  ]
+  }, {
+  low: 0,
+  showArea: true
+});
+
+// image carousel slider 
+document.querySelectorAll('.carousel-item img').forEach(function(item) {
+  item.addEventListener('click', function() {
+    document.getElementById('modalImage').src = this.src;
+  });
+});

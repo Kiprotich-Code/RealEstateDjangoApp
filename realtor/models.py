@@ -15,5 +15,6 @@ class Properties(models.Model):
     images = models.ImageField(upload_to='properties')
     # location = models.CharField(max_length=100, blank=True)
     features = models.TextField(blank=True)
+    featured = models.BooleanField(default=False)
 
 

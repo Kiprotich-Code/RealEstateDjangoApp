@@ -21,15 +21,18 @@ class PropertiesForm(forms.ModelForm):
                 Column('amentities', css_class='col-md-3'),
             ),
             Row(
-                Column('size', css_class='col-md-3'),
-                Column('bedrooms', css_class='col-md-3'),
-                Column('bathrooms', css_class='col-md-3'),
+                Column('size', css_class='col-md-2'),
+                Column('bedrooms', css_class='col-md-2'),
+                Column('bathrooms', css_class='col-md-2'),
                 Column('status', css_class='col-md-3'),
                 Column('images', css_class='col-md-3'),
             ),
             Row(
                 Column('description', css_class='col-md-6'),
                 Column('features', css_class='col-md-6'),
+            ),
+            Row(
+                Column('featured', css_class='col-md-3'),
             ),
             Submit('submit', u'Create Property', css_class='btn btn-light btn-lg'),
         )

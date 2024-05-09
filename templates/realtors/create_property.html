@@ -7,16 +7,20 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid py-5">
-    <div class="row mt-5">
-        <div class="col-md-10 p-3 bg-dark text-white border border-dark border-4 rounded m-auto">
-            <h2 class="text-white small">Admin | Create Property</h2>
-            <hr>
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Properties</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Create Property</li>
+        </ol>
+    </nav>
+    <div class="container-fluid">
+        <div class="p-3 bg-dark text-white rounded">
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% crispy form %}
             </form>
         </div>
     </div>
-</div>
+</main>
 {% endblock %}
