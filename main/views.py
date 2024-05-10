@@ -19,6 +19,7 @@ class PropertyListView(ListView):
     context_object_name = 'properties'
     model = Properties
     template_name = 'main/prop.html'
+    paginate_by = 20
 
 
 class PropertyDetailView(DetailView):

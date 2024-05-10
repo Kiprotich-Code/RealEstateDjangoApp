@@ -7,14 +7,13 @@ class Properties(models.Model):
     address = models.CharField(max_length=250)
     price = models.IntegerField()
     size = models.CharField(max_length=50, blank=True)
-    bedrooms = models.IntegerField(blank=True)
-    bathrooms = models.IntegerField(blank=True)
-    amentities = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=50)
-    # year_built = models.IntegerField(blank=True)
     images = models.ImageField(upload_to='properties')
-    # location = models.CharField(max_length=100, blank=True)
+    location = models.CharField(max_length=100, blank=True, default="Nairobi")
     features = models.TextField(blank=True)
-    featured = models.BooleanField(default=False)
+    # date_created = models.TimeField(b=True) 
+
+    def __str__(self):
+        return f'{self.title} created on {self.date_created}'
 
 

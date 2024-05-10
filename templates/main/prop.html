@@ -40,7 +40,7 @@
     <hr>
     <!-- portfolio  -->
     <div class="py-3">
-        <div class="d-flex gap-1 flex-wrap flex-column flex-md-row">
+        <div class="d-flex gap-2 flex-wrap flex-column flex-md-row">
             {% for property in properties %}
             <div class="card" style="width: 20rem;">
                 <img src="{{property.images.url}}" class="card-img-top" alt="..." style="width: 100%; height: 200px;">
@@ -80,6 +80,21 @@
             </div>
             {% endfor %}
         </div>
+
+        {% comment %} pagination  {% endcomment %}
+        <div class='pagination justify-content-center py-3w2222222eeeeeeeeeee'>
+            {% if page_obj.has_previous %}
+              <a href='{% url "props" %}?page={{ page_obj.previous_page_number }}' class="text-decoration-none">Previous </a>
+            {% endif %}
+        
+            <span class='mx-4'>
+              Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+        
+            {% if page_obj.has_next %}
+              <a href='{% url "props" %}?page={{ page_obj.next_page_number }}' class="text-decoration-none"> Next</a>
+            {% endif %}
+          </div>
         
     </div>
 </div>
