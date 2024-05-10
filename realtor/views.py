@@ -2,10 +2,15 @@ from django.shortcuts import render, redirect
 from .forms import PropertiesForm
 from django.views.generic import ListView, DetailView,  UpdateView
 from .models import Properties
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def realtor(request):
-    return render(request, 'realtors/dashboard.html')
+    properties = Properties.objects.all()[0:9]
+    context = {
+        'properties': properties,
+    }
+    return render(request, 'realtors/dashboard.html', context)
 
 
 def create_property(request):
@@ -28,6 +33,7 @@ class PropertyListView(ListView):
     context_object_name = 'properties'
     model = Properties
     template_name = 'realtors/property_list.html'
+    paginate_by = 5
 
 
 class PropertyDetailView(DetailView):
