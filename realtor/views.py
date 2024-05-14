@@ -45,5 +45,5 @@ class PropertyDetailView(DetailView):
 class PropertyUpdateView(UpdateView):
     template_name = 'realtors/update_property.html'
     model = Properties
-    fields = ('title', 'description', 'images', 'features')
+    fields = ('title', 'description', 'images', 'address', 'price', 'size', 'status', 'location', 'featured', )
     success_url = '../property_list'

@@ -15,21 +15,18 @@ class PropertiesForm(forms.ModelForm):
         self.helper = FormHelper(self)
         self.helper.layout = Layout(
             Row(
-                Column('title', css_class='col-md-3'),
-                Column('address', css_class='col-md-3'),
-                Column('price', css_class='col-md-3'),
-                Column('amentities', css_class='col-md-3'),
+                Column('title', css_class='col-md-4'),
+                Column('address', css_class='col-md-4'),
+                Column('price', css_class='col-md-4'),
             ),
             Row(
-                Column('size', css_class='col-md-2'),
-                Column('bedrooms', css_class='col-md-2'),
-                Column('bathrooms', css_class='col-md-2'),
+                Column('size', css_class='col-md-3'),
                 Column('status', css_class='col-md-3'),
                 Column('images', css_class='col-md-3'),
+                Column('location', css_class='col-md-3'),
             ),
             Row(
                 Column('description', css_class='col-md-6'),
-                Column('features', css_class='col-md-6'),
             ),
             Row(
                 Column('featured', css_class='col-md-3'),

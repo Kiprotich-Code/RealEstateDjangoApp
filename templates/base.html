@@ -41,11 +41,7 @@
               <a class="nav-link" href="#contact">Contact Us</a>
             </li>
             <li class="nav-item mx-md-5">
-              <a class="btn btn-outline-warning rounded" href="#callback">Request Instant Callback</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="btn btn-outline-warning rounded" href="{% url 'realtor'%}">Admin</a>
+              <a class="btn btn-outline-info rounded" href="{% url 'realtor'%}">Realtor</a>
             </li>
         </div>
       </div>
@@ -62,7 +58,7 @@
         <p class="fw-lighter">
 
         </p>
-        <a class="btn btn-lg btn-outline-warning  rounded mb-3" href="#explore">Get Started</a>
+        <a class="btn btn-lg btn-outline-info  rounded mb-3" href="#explore">Get Started</a>
         <div class="card border border-3 border-shadow-lg p-3 pointer">
           <h4 class="fw-lighter small"># We are also on Social Media</h4>
           <div class="d-flex gap-3 py-3">
@@ -290,17 +286,17 @@
 
   <!-- portfolio  -->
   <section id="explore">
-    {% if props %}
+    {% if featured_props %}
     <div class="container-fluid py-5">
       <div class="container py-5">
         <p class="small fw-lighter fade-in">Properties you can't afford to miss!</p>
-        <h2 class="py-2 lh-lg fade-in">Featured Properties</h2>
+        <h2 class="py-2 lh-lg fade-in text-info">Featured Properties</h2>
         <div class="d-flex gap-3 justify-content-center flex-column flex-md-row">
           {% for prop in featured_props %}
           <div class="card">
             <img src="{% static 'images/4-2.jpg' %}" class="card-img-top'" alt="...">
             <div style="position: absolute;top: 8px;right: 0px;" class="p-2">
-              <button class="btn btn-sm btn-success">Featured</button>
+              <button class="btn btn-sm btn-outline-info">Featured</button>
             </div>
             <div class="card-body">
               <h5 class="card-title fw-bold text-info">{{prop.title}}</h5>
@@ -333,7 +329,7 @@
                 </p>
               </span>
 
-              <button class="btn btn-outline-warning">Details</button>
+              <a class="btn btn-outline-info rounded" href="{% url 'prop_details' prop.id%}">Details</a>
             </div>
           </div>
           {% endfor %}
