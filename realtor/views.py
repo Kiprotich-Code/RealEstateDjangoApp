@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import PropertiesForm
 from django.views.generic import ListView, DetailView,  UpdateView
 from .models import Properties
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def realtor(request):
